@@ -1,8 +1,10 @@
-export interface INewsSource {
+import { ImageSourcePropType, ImageURISource } from "react-native"
+
+export type INewsSource = {
   id: string | null,
   name: string | null
 }  
-export interface INewsItem {
+export type INewsItem = {
   source: INewsSource,
   author: string | null,
   title: string | null,

@@ -14,7 +14,7 @@ const TabLayout = () => {
   return (
     <Tabs screenOptions={{tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,}}>
       <Tabs.Screen name="index" options={{
-          title: 'Список новостей',
+          title: 'Latest news list',
           tabBarIcon: ({ color }) => <TabBarIcon name="newspaper-o" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -28,7 +28,7 @@ const TabLayout = () => {
         }}
       />
       <Tabs.Screen name="addNews" options={{
-          title: 'Добавить новость',
+          title: 'Add news',
           tabBarIcon: ({ color }) => <TabBarIcon name="plus-square-o" color={color} />,
         }} />
     </Tabs>
