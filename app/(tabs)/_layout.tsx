@@ -16,6 +16,9 @@ const TabLayout = () => {
       <Tabs.Screen name="index" options={{
           title: 'Latest news list',
           tabBarIcon: ({ color }) => <TabBarIcon name="newspaper-o" color={color} />,
+          headerLeft: () => (
+            <Image source={require('../../assets/images/icon.png')} style={{width: 48, height: 48}} />
+          ),
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>

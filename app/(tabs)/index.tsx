@@ -35,9 +35,9 @@ const NewsList: FC = () => {
           <TouchableOpacity style={styles.newsItem}>
             <Image key={index} source={{uri: String(item.urlToImage)}} style={{width: 100, height: 100, borderRadius: 8}} />
             <View style={styles.details}>
-              <Text style={{fontSize: 16}}>{item.title}</Text>
-              <View style={{display: 'flex', flexDirection: 'row', gap: 5}}>
-                <Text style={{fontSize: 14}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.source.name}</Text>
+              <Text style={{fontSize: 16}}>{item.title?.length >= 114 ? item.title?.substring(0,114) + '...' : item.title}</Text>
+              <View style={{display: 'flex', flexDirection: 'row', gap: 10}}>
+                <Text style={{fontSize: 14}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.source.name.length >= 14 ? item?.source.name.substring(0,14) + '...' : item.source.name}</Text>
                 <Text style={{fontSize: 14}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.publishedAt?.replace('T', ' ')?.replace("Z", '')?.replaceAll('-', '.')}</Text>
               </View>
             </View>
