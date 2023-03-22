@@ -10,21 +10,8 @@ export const unstable_settings = {
   initialRouteName: '(tabs)',
 };
 
-const RootLayoutNav = () => {
-  const colorScheme = useColorScheme();
-  return (
-    <>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-        </Stack>
-      </ThemeProvider>
-    </>
-  );
-}
-
 const RootLayout = () => {
+  const colorScheme = useColorScheme();
   const [loaded, error] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     mtSemibold: require('../assets/fonts/Montserrat-SemiBold.ttf'),
@@ -41,7 +28,14 @@ const RootLayout = () => {
   return (
     <> 
       {!loaded && <SplashScreen />} 
-      {loaded && <RootLayoutNav />} 
+      {loaded && (
+        <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+          </Stack>
+        </ThemeProvider>
+      )} 
     </>
   )
 }
