@@ -35,7 +35,7 @@ const NewsList: FC = () => {
           <TouchableOpacity style={styles.newsItem}>
             <Image key={index} source={{uri: String(item.urlToImage)}} style={{width: 100, height: 100, borderRadius: 8}} />
             <View style={styles.details}>
-              <Text style={{fontSize: 16}}>{item.title?.length >= 114 ? item.title?.substring(0,114) + '...' : item.title}</Text>
+              <Text style={{fontSize: 16, paddingRight: 10}}>{item.title?.length >= 114 ? item.title?.substring(0,114) + '...' : item.title}</Text>
               <View style={{display: 'flex', flexDirection: 'row', gap: 10}}>
                 <Text style={{fontSize: 14}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.source.name.length >= 14 ? item?.source.name.substring(0,14) + '...' : item.source.name}</Text>
                 <Text style={{fontSize: 14}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.publishedAt?.replace('T', ' ')?.replace("Z", '')?.replaceAll('-', '.')}</Text>
@@ -57,14 +57,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   newsList: {
-    marginTop: 20,
+    marginTop: 35,
     maxWidth: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     gap: 15,
-    paddingBottom: 50
+    paddingBottom: 70
   },
   newsItem: {
     maxWidth: '100%',

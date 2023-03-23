@@ -1,6 +1,6 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Image, Pressable, useColorScheme } from 'react-native';
+import { Link, Tabs, useNavigation } from 'expo-router';
+import { Image, Pressable, TouchableOpacity, useColorScheme } from 'react-native';
 
 import Colors from '../../constants/Colors';
 
@@ -9,16 +9,20 @@ const TabBarIcon = (props: {name: React.ComponentProps<typeof FontAwesome>['name
 
 
 const TabLayout = () => {
+  const navigation = useNavigation()
   const colorScheme = useColorScheme();
 
   return (
     <Tabs screenOptions={{tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,}}>
       <Tabs.Screen name="index" options={{
-          title: 'Latest news list',
+          title: 'List of latest news',
+          headerTitleStyle: {fontSize: 18.5, marginTop: 5},
+          headerRightContainerStyle: {marginTop: 5},
+          headerBackgroundContainerStyle: {marginBottom: -12},
           tabBarIcon: ({ color }) => <TabBarIcon name="newspaper-o" color={color} />,
           headerLeft: () => (
-            <Image source={require('../../assets/images/icon.png')} style={{width: 48, height: 48}} />
-          ),
+            <TouchableOpacity onPress={() => navigation.navigate('(tabs)')}>{colorScheme === 'light' ? <Image source={require('../../assets/images/light-icon.png')} style={{width: 38, height: 38, marginLeft: 16, borderRadius: 3, marginTop: 5}} /> : <Image source={require('../../assets/images/dark-icon.png')} style={{width: 38, height: 38, marginLeft: 16, borderRadius: 3, marginTop: 5}} /> }</TouchableOpacity>
+            ),
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -32,7 +36,13 @@ const TabLayout = () => {
       />
       <Tabs.Screen name="addNews" options={{
           title: 'Add news',
+          headerTitleStyle: {fontSize: 18.5, marginTop: 5},
+          headerRightContainerStyle: {marginTop: 5},
+          headerBackgroundContainerStyle: {marginBottom: -12},
           tabBarIcon: ({ color }) => <TabBarIcon name="plus-square-o" color={color} />,
+          headerLeft: () => (
+          <TouchableOpacity onPress={() => navigation.navigate('(tabs)')}>{colorScheme === 'light' ? <Image source={require('../../assets/images/light-icon.png')} style={{width: 38, height: 38, marginLeft: 16, borderRadius: 3, marginTop: 5}} /> : <Image source={require('../../assets/images/dark-icon.png')} style={{width: 38, height: 38, marginLeft: 16, borderRadius: 3, marginTop: 5}} /> }</TouchableOpacity>
+            ),
         }} />
     </Tabs>
   );
