@@ -7,7 +7,7 @@
 
                                                                                   
 React native news application, which implements work from the api of the news site, and worked out many details of application design through react native, for example, light/dark themes, etc.
-* [![React][React.js]][React-url]   ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)                                                                                  
+* ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)   ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)                                                                                  
 
 <div style="display: flex, flex-direction: row, justify-content: center>
     <img src="https://i.ibb.co/gdcxLrF/2023-03-24-22-07-29.png" style="width: 25%">
