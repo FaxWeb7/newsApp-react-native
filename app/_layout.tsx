@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
+import { Text } from '../components/Themed';
 export { ErrorBoundary } from 'expo-router';
 
 export const unstable_settings = {
@@ -33,6 +34,7 @@ const RootLayout = () => {
           <Stack>
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
             <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+            <Stack.Screen name="(newsItem)/[newsId]" options={{headerTitle: 'Просмотр новости'}} />
           </Stack>
         </ThemeProvider>
       )} 

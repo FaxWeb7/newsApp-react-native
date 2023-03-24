@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../../components/Themed';
 
-const addNews = () => {
+const likedNews = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>addNews</Text>
+      <Text style={styles.title}>Liked News</Text>
     </View>
   );
 }
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default addNews;
+export default likedNews;

@@ -4,10 +4,12 @@ import { FC, useEffect, useState } from 'react';
 import { INewsItem } from '../../Types/Types';
 import axios from 'axios';
 import LoadingSpinner from '../../components/LoadingSpinner';
+import { useRouter } from 'expo-router';
 
 const NewsList: FC = () => {
   const [newsList, setNewsList] = useState<Array<INewsItem>>([{} as INewsItem])
   const [isLoading, setIsLoading] = useState<boolean>(true)
+  const router = useRouter()
 
   useEffect(() => {
     fetchData()
@@ -32,7 +34,7 @@ const NewsList: FC = () => {
       {isLoading && <LoadingSpinner size='large' />}
       {!isLoading && (
         <FlatList showsHorizontalScrollIndicator={false} contentContainerStyle={styles.newsList} data={newsList} renderItem={({ item, index }) => (
-          <TouchableOpacity style={styles.newsItem}>
+          <TouchableOpacity style={styles.newsItem} onPress={() => router.push({ pathname: '/(newsItem)/[newsId.tsx]', params: { newsTitle: item.title } })}>
             <Image key={index} source={{uri: String(item.urlToImage)}} style={{width: 100, height: 100, borderRadius: 8}} />
             <View style={styles.details}>
               <Text style={{fontSize: 16, paddingRight: 10}}>{item.title?.length >= 114 ? item.title?.substring(0,114) + '...' : item.title}</Text>

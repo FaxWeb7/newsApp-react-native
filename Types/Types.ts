@@ -1,4 +1,4 @@
-import { ImageSourcePropType, ImageURISource } from "react-native"
+import { Href } from "expo-router/src/link/href"
 
 export type INewsSource = {
   id: string | null,
@@ -9,8 +9,8 @@ export type INewsItem = {
   author: string | null,
   title: string,
   description: string | null, 
-  url: string | null,
-  urlToImage: string | null,
+  url: Href | null,
+  urlToImage: Href | null,
   publishedAt: string | null,
   content: string | null,
 }
