@@ -44,8 +44,6 @@ _Below is an example of how you can instruct your audience on installing and set
     pnpm start
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -59,5 +57,4 @@ _Below is an example of how you can instruct your audience on installing and set
     - [ ] Languages
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
