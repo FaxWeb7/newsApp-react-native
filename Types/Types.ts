@@ -1,10 +1,10 @@
 import { Href } from "expo-router/src/link/href"
 
-export type INewsSource = {
+export interface INewsSource {
   id: string | null,
   name: string
 }  
-export type INewsItem = {
+export interface INewsItem {
   source: INewsSource,
   author: string | null,
   title: string,

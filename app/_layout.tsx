@@ -34,7 +34,7 @@ const RootLayout = () => {
           <Stack>
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
             <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-            <Stack.Screen name="(newsItem)/[newsId]" options={{headerTitle: 'Просмотр новости'}} />
+            <Stack.Screen name="(newsItem)/[item]" options={{headerTitle: 'View news details'}} />
           </Stack>
         </ThemeProvider>
       )} 
