@@ -39,8 +39,8 @@ const NewsList: FC = () => {
             <View style={styles.details}>
               <Text style={{fontSize: 16, paddingRight: 10}}>{item.title?.length >= 114 ? item.title?.substring(0,114) + '...' : item.title}</Text>
               <View style={{display: 'flex', flexDirection: 'row', gap: 10}}>
-                <Text style={{fontSize: 14}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.source.name.length >= 14 ? item?.source.name.substring(0,14) + '...' : item.source.name}</Text>
-                <Text style={{fontSize: 14}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.publishedAt?.replace('T', ' ')?.replace("Z", '')?.replaceAll('-', '.')}</Text>
+                <Text style={{fontSize: 14}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.source.name.length >= 15 ? item?.source.name.substring(0,15) + '...' : item.source.name}</Text>
+                <Text style={{fontSize: 14}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.publishedAt?.replace('T', ' ')?.replace("Z", '')?.replaceAll('-', '.').split(' ')[0] + ' ' + item.publishedAt?.replace('T', ' ')?.replace("Z", '')?.replaceAll('-', '.').split(' ')[1].substring(0, 5)}</Text>
               </View>
             </View>
           </TouchableOpacity>
