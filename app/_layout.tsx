@@ -4,7 +4,6 @@ import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
-import { Text } from '../components/Themed';
 export { ErrorBoundary } from 'expo-router';
 
 export const unstable_settings = {
@@ -21,7 +20,7 @@ const RootLayout = () => {
     mtLight: require('../assets/fonts/Montserrat-Light.ttf'),
     ...FontAwesome.font,
   });
-
+  
   useEffect(() => {
     if (error) throw error;
   }, [error]);

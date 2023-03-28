@@ -1,4 +1,5 @@
 import { Href } from "expo-router/src/link/href"
+import { ImageURISource } from "react-native"
 
 export interface INewsSource {
   id: string | null,
@@ -9,8 +10,8 @@ export interface INewsItem {
   author: string | null,
   title: string,
   description: string | null, 
-  url: Href | null,
-  urlToImage: Href | null,
+  url: Href,
+  urlToImage: string | undefined,
   publishedAt: string | null,
   content: string | null,
 }
