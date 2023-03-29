@@ -1,20 +1,19 @@
 # News App
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
 
+
+
+ ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)   ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)                                                 <br />              
+React native news application, which implements work from the api of the news site, and worked out many details of application design through react native, for example, light/dark themes, etc. 
+                                                                            
 
                                                                                   
-React native news application, which implements work from the api of the news site, and worked out many details of application design through react native, for example, light/dark themes, etc.
-* ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)   ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)                                                                                  
+## **Screenshots**
 
-<div style="display: flex, flex-direction: row, justify-content: center>
-    <img src="https://i.ibb.co/gdcxLrF/2023-03-24-22-07-29.png" style="width: 25%">
-    <img src="https://i.ibb.co/gdcxLrF/2023-03-24-22-07-29.png" style="width: 24%">
-    <img src="https://i.ibb.co/VM2MPzQ/2023-03-24-22-07-47.png" style="width: 24%">
-    <img src="https://i.ibb.co/PmbJJNh/2023-03-24-22-47-16.png" style="width: 24%">
-    <img src="https://i.ibb.co/qWXvpwk/2023-03-24-23-05-33.png" style="width: 24%"                                                                            
-</div>
+|   News list	|   Dark theme	|   Liked news	|   News item
+|:-:	|:-:	|:-:	|:-:
+|  ![Image 1](https://i.ibb.co/99V5v8n/2023-03-25-00-22-41.png)	|   ![Image 2](https://i.ibb.co/x3LMhmw/2023-03-25-00-22-27.png)	|   ![Image 3](https://i.ibb.co/PmbJJNh/2023-03-24-22-47-16.png)	|   ![Image 4](https://i.ibb.co/qWXvpwk/2023-03-24-23-05-33.png)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -48,7 +47,7 @@ _Below is an example of how you can instruct your audience on installing and set
 ## Roadmap
 
 - [x] Add news list
-- [ ] Add news list item
+- [x] Add news list item
 - [ ] Connect FireBase for users DB
 - [ ] "Favourite news" page
 - [ ] Profile settings page
