@@ -38,14 +38,15 @@ const NewsItem = () => {
       {isLoading && <LoadingSpinner size='large' />}
       {!isLoading && (
         <>
-          <Text style={{fontSize: 32, fontFamily: 'mtSemibold'}}>{item.title}</Text>
+          <Text style={{fontSize: 30, fontFamily: 'mtSemibold'}}>{item.title}</Text>
+          <Image source={{uri: item.urlToImage}} resizeMode='stretch' style={{width: '100%', height: 225, borderRadius: 6}} />
           <View style={styles.details}>
-            <ExternalLink href={item.url}><Text style={{fontSize: 15, color: '#2f95dc'}}>Link to the oficcial resource</Text></ExternalLink>
-            <Text style={{fontSize: 13, marginTop: 2, marginLeft: 'auto'}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)'>{item.source.name} - </Text>
+            <ExternalLink href={item.url}><Text style={{fontSize: 15, color: '#2f95dc'}}>Link to resource</Text></ExternalLink>
+            <Text style={{fontSize: 13, marginLeft: 'auto', marginTop: 2}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)'>{item.source.name} - </Text>
             <Text style={{fontSize: 13, marginTop: 2}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.publishedAt?.replace('T', ' ')?.replace("Z", '')?.replaceAll('-', '.').split(' ')[0] + ' ' + item.publishedAt?.replace('T', ' ')?.replace("Z", '')?.replaceAll('-', '.').split(' ')[1].substring(0, 5)}</Text>
           </View>
-          <Image source={{uri: item.urlToImage}} resizeMode='stretch' style={{width: '100%', height: 225, borderRadius: 6}} />
-          <Text style={{fontSize: 22}}>{item.content}</Text>
+          <View style={styles.divider} />
+          <Text style={{fontSize: 21}}>{item.content}</Text>
         </>
       )}
     </View>
@@ -68,7 +69,15 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 5
+    marginBottom: 5,
+    marginTop: -3
+  },
+  divider: {
+    width: '100%',
+    height: 1,
+    backgroundColor: '#ccc',
+    marginTop: -8,
+    marginBottom: 3
   }
 })
 
