@@ -1,15 +1,18 @@
-import { FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { FlatList, Image, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
 import { Text, View } from '../../components/Themed';
 import { FC, useEffect, useState } from 'react';
 import { INewsItem } from '../../Types/Types';
 import axios from 'axios';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import { useRouter } from 'expo-router';
+import { FontAwesome } from '@expo/vector-icons';
 
 const NewsList: FC = () => {
   const [newsList, setNewsList] = useState<Array<INewsItem>>([{} as INewsItem])
+  const [likedNewsTitles, setLikedNewsTitles] = useState<Array<string>>([''])
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const router = useRouter()
+  const colorTheme = useColorScheme()
 
   useEffect(() => {
     fetchData()
@@ -21,12 +24,22 @@ const NewsList: FC = () => {
         method: 'get',
         url: 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=cd4f6ec6a1fa4e91b336748a2e0feff4',
       })
-      const filteredNews = await response.data.articles.filter((el: INewsItem) => el.urlToImage !== null && el.content !== null)
+      const filteredNews = await response.data.articles.filter((el: INewsItem) => el.urlToImage !== null && el.content !== null && el.source.name !== null)
       setNewsList(filteredNews)
       setIsLoading(false)
     } catch(e) {
       console.log(e)
     }
+  }
+
+  const isEquals = (titlee: any): any => {
+    likedNewsTitles.map((title) => {
+      if (title === titlee) {
+        return true
+      } else {
+        return false
+      }
+    }) 
   }
 
   return (
@@ -37,7 +50,14 @@ const NewsList: FC = () => {
           <TouchableOpacity style={styles.newsItem} onPress={() => router.push({ pathname: '/(newsItem)/[item.tsx]', params: { itemTitle: item.title } })}>
             <Image key={index} source={{uri: String(item.urlToImage)}} style={{width: 100, height: 100, borderRadius: 8}} />
             <View style={styles.details}>
-              <Text style={{fontSize: 16, paddingRight: 10}}>{item.title?.length >= 114 ? item.title?.substring(0,114) + '...' : item.title}</Text>
+              <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', gap: 0, width: '100%'}}>
+                <Text style={{fontSize: 16, maxWidth: '87%'}}>{item.title?.length >= 114 ? item.title?.substring(0,108) + '...' : item.title}</Text>
+
+                <TouchableOpacity onPress={isEquals(item.title) ? () => {delete likedNewsTitles[likedNewsTitles.indexOf(item.title)]; console.log(likedNewsTitles)} : () => {setLikedNewsTitles([...likedNewsTitles, item.title]); console.log(likedNewsTitles)}}>
+                    <FontAwesome name={isEquals(item.title) ? 'heart' : 'heart-o'} color={colorTheme === 'dark' ? 'white' : 'red'} size={24} style={{marginRight: 1}} />
+                </TouchableOpacity>
+                
+              </View>
               <View style={{display: 'flex', flexDirection: 'row', gap: 10}}>
                 <Text style={{fontSize: 14}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.source.name.length >= 15 ? item?.source.name.substring(0,15) + '...' : item.source.name}</Text>
                 <Text style={{fontSize: 14}} lightColor='rgba(0,0,0,0.7)' darkColor='rgba(255,255,255,0.7)' >{item.publishedAt?.replace('T', ' ')?.replace("Z", '')?.replaceAll('-', '.').split(' ')[0] + ' ' + item.publishedAt?.replace('T', ' ')?.replace("Z", '')?.replaceAll('-', '.').split(' ')[1].substring(0, 5)}</Text>
