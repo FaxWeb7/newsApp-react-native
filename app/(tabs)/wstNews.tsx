@@ -19,7 +19,7 @@ const NewsList: FC = () => {
     try{
       const response = await axios({
         method: 'get',
-        url: 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=cd4f6ec6a1fa4e91b336748a2e0feff4',
+        url: 'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=cd4f6ec6a1fa4e91b336748a2e0feff4',
       })
       const filteredNews = await response.data.articles.filter((el: INewsItem) => el.urlToImage !== null && el.content !== null && el.source.name !== null)
       setNewsList(filteredNews)
@@ -34,7 +34,7 @@ const NewsList: FC = () => {
       {isLoading && <LoadingSpinner size='large' />}
       {!isLoading && (
         <FlatList showsHorizontalScrollIndicator={false} contentContainerStyle={styles.newsList} data={newsList} renderItem={({ item, index }) => (
-          <TouchableOpacity style={styles.newsItem} onPress={() => router.push({ pathname: '/(newsItem)/[item.tsx]', params: { newsTheme: 'business', itemTitle: item.title } })}>
+          <TouchableOpacity style={styles.newsItem} onPress={() => router.push({ pathname: '/(newsItem)/[item.tsx]', params: { newsTheme: 'wst', itemTitle: item.title } })}>
             <Image key={index} source={{uri: String(item.urlToImage)}} style={{width: 100, height: 100, borderRadius: 8}} />
             <View style={styles.details}>
                 <Text style={{fontSize: 16}}>{item.title?.length >= 114 ? item.title?.substring(0,114) + '...' : item.title}</Text>

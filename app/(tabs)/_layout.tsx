@@ -15,8 +15,8 @@ const TabLayout = () => {
   return (
     <Tabs screenOptions={{tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,}}>
       <Tabs.Screen name="index" options={{
-          title: '',
-          headerTitle: 'List of latest news',
+          title: 'Top Business News',
+          headerTitle: 'Top Business News',
           headerTitleStyle: {fontSize: 18.5, marginTop: 5},
           headerRightContainerStyle: {marginTop: 5},
           headerBackgroundContainerStyle: {marginBottom: -12},
@@ -35,13 +35,13 @@ const TabLayout = () => {
           ),
         }}
       />
-      <Tabs.Screen name="likedNews" options={{
-          title: '',
-          headerTitle: 'Liked News',
+      <Tabs.Screen name="wstNews" options={{
+          title: 'Wall Street Articles',
+          headerTitle: 'Wall Street Articles',
           headerTitleStyle: {fontSize: 18.5, marginTop: 5},
           headerRightContainerStyle: {marginTop: 5},
           headerBackgroundContainerStyle: {marginBottom: -12},
-          tabBarIcon: ({ color }) => <TabBarIcon name="heart-o" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="newspaper-o" color={color} />,
           headerLeft: () => (
           <TouchableOpacity onPress={() => router.push('/')}>{colorScheme === 'light' ? <Image source={require('../../assets/images/light-icon.png')} style={{width: 38, height: 38, marginLeft: 16, borderRadius: 3, marginTop: 5}} /> : <Image source={require('../../assets/images/dark-icon.png')} style={{width: 38, height: 38, marginLeft: 16, borderRadius: 3, marginTop: 5}} /> }</TouchableOpacity>
             ),

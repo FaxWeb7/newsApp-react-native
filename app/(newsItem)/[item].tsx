@@ -8,7 +8,7 @@ import LoadingSpinner from '../../components/LoadingSpinner'
 import ExternalLink from '../../components/ExternalLink'
 
 const NewsItem = () => {
-  const { itemTitle } = useSearchParams()
+  const { newsTheme, itemTitle } = useSearchParams()
   const [item, setItem] = useState<INewsItem>({} as INewsItem)
   const [isLoading, setIsLoading] = useState<boolean>(true)
   
@@ -20,7 +20,7 @@ const NewsItem = () => {
     try{
       const response = await axios({
         method: 'get',
-        url: 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=cd4f6ec6a1fa4e91b336748a2e0feff4',
+        url: `${newsTheme === 'business' ? 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=cd4f6ec6a1fa4e91b336748a2e0feff4' : 'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=cd4f6ec6a1fa4e91b336748a2e0feff4'}`,
       })
       await response.data.articles.map((item: INewsItem) => {
         if (item.title == itemTitle){
