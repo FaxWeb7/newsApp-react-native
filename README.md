@@ -11,9 +11,9 @@ React native news application, which implements work from the api of the news si
                                                                                   
 ## **Screenshots**
 
-|   News list	|   Dark theme	|   Liked news	|   News item
+|   Business news	|   Wall st. news	|   News item	|   Dark theme
 |:-:	|:-:	|:-:	|:-:
-|  ![Image 1](https://i.ibb.co/99V5v8n/2023-03-25-00-22-41.png)	|   ![Image 2](https://i.ibb.co/x3LMhmw/2023-03-25-00-22-27.png)	|   ![Image 3](https://i.ibb.co/PmbJJNh/2023-03-24-22-47-16.png)	|   ![Image 4](https://i.ibb.co/qWXvpwk/2023-03-24-23-05-33.png)
+|  ![Image 1](https://i.ibb.co/Lvv5JVh/2023-04-07-18-29-16.png)	|   ![Image 2](https://i.ibb.co/1TDF4gp/2023-04-07-18-29-26.png)	|   ![Image 3](https://i.ibb.co/LzZvnSZ/2023-04-07-18-29-43.png)	|   ![Image 4](https://i.ibb.co/xFbdQzm/2023-04-07-18-30-11.png)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -46,12 +46,11 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add news list
-- [x] Add news list item
-- [ ] Connect FireBase for users DB
-- [ ] "Favourite news" page
-- [ ] Profile settings page
-    - [ ] Themes
-    - [ ] Languages
-
-
+- [x] Init project
+- [x] Create structure + dark theme 
+- [x] Navigation
+- [x] Include SplashScreen
+- [x] Top Business News page
+- [x] News Item page
+- [x] Modal screen
+- [x] Wall Street Articles page
