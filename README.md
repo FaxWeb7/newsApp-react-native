@@ -13,7 +13,7 @@ React native news application, which implements work from the api of the news si
 
 |   Business news	|   Wall st. news	|   News item	|   Dark theme
 |:-:	|:-:	|:-:	|:-:
-|  ![Image 1](https://i.ibb.co/Lvv5JVh/2023-04-07-18-29-16.png)	|   ![Image 2](https://i.ibb.co/1TDF4gp/2023-04-07-18-29-26.png)	|   ![Image 3](https://i.ibb.co/LzZvnSZ/2023-04-07-18-29-43.png)	|   ![Image 4](https://i.ibb.co/xFbdQzm/2023-04-07-18-30-11.png)
+|  ![Image 1](https://i.ibb.co/K7YYSfL/asd.png)	|   ![Image 2](https://i.ibb.co/h7ppq6W/asdasd.png)	|   ![Image 3](https://i.ibb.co/LzZvnSZ/2023-04-07-18-29-43.png)	|   ![Image 4](https://i.ibb.co/xFbdQzm/2023-04-07-18-30-11.png)
 
 <!-- GETTING STARTED -->
 ## Getting Started
